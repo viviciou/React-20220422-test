@@ -1,0 +1,15 @@
+@import '../../style/variable/layoutValue';
+
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: $footerHeight;
+  background: $footer-bg;
+  color: $footer-color;
+  font-size: $footer-fontSize;
+  text-align: center;
+  line-height: $footerHeight;
+}

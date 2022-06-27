@@ -1,0 +1,6 @@
+export const CHANGE_USER_STATUS = "CHANGE_USER_STATUS";
+
+export const GET_USER_IDLE = "GET_USER_IDLE";
+export const GET_USER_LOAD = "GET_USER_LOAD";
+export const GET_USER_SUCCESS = "GET_USER_SUCCESS";
+export const GET_USER_ERROR = "GET_USER_ERROR";

@@ -1,0 +1,23 @@
+@charset "utf-8";
+@import "../../style/variable/color";
+
+.card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 16px;
+    .card-img {
+        margin: auto;
+        width: 200px;
+        height: 150px;
+        background:url("https://fakeimg.pl/200x150?text=img&font=lobster")
+    }
+    .card-title {
+        padding: 0.5rem 0;
+        color: $dark-text-color;
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+    .card-desc {
+        color: $light-text-color;
+    }
+}

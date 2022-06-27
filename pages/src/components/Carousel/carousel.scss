@@ -1,0 +1,142 @@
+@mixin trans($t: 0.5s, $tdelay: 0s) {
+	transition: $t $tdelay;
+}
+@mixin flex_center {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin size($w, $h: $w) {
+	width: $w;
+	height: $h;
+}
+
+.carouselWrap {
+	@include size(100%, auto);
+	@include flex_center;
+	justify-content: center;
+	margin: 0;
+	position: relative;
+	overflow: hidden;
+}
+.carouselArea {
+	@include size(100%, auto);
+	white-space: nowrap;
+	position: relative;
+	margin-left: 240px;
+	box-sizing: border-box;
+	border-radius: 10px;
+	transition-timing-function: ease;
+	position: relative;
+	@media screen and (max-width: 900px) {
+		margin-left: 0px;
+	}
+	> .carouselPosts {
+		position: relative;
+		transition: 0.3s;
+		perspective: 600px;
+
+		&.animateStop {
+			transition: 0s;
+		}
+	}
+}
+.carouselPostBox {
+	@include size(400px, auto);
+	display: inline-block;
+	background-position: center, center;
+	background-size: cover;
+	transform: translatez(100px);
+	transition: 0.5s;
+	user-select: none; // 不給選取
+	position: relative;
+	&.animateStop {
+		transition: 0s;
+	}
+	> .carouselPostBox-image {
+		@include trans;
+		width: 100%;
+		min-height: 400px;
+		background-position: center, center;
+		background-size: cover;
+		content-visibility: auto;	// no suport Firefox/IE/Safari
+		transition: 0.5s;
+		cursor: pointer;
+		// &:hover{
+		//    transform: scale(1.1);
+		// }
+	}
+	.carouselPostBox-title {
+		margin-top: -4rem;
+		// font-family: HelveticaNeue;
+		font-size: 20px;
+		font-weight: bold;
+		line-height: 1.25;
+		letter-spacing: 0.8px;
+		text-align: center;
+		color: #fff;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	}
+	.carouselPostBox-desc {
+		margin-top: 1rem;
+		padding: 0.25rem;
+		opacity: 0.5;
+		// font-family: HelveticaNeue;
+		font-size: 14px;
+		line-height: 1.14;
+		letter-spacing: 0.56px;
+		text-align: center;
+		background: rgba(0, 0, 0, 0.5);
+		color: #fff;
+		text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+	}
+}
+.controlLeft,
+.controlRight {
+	@include size(40px);
+	@include flex_center;
+	@include trans;
+	border: solid 1px white;
+	border-radius: 50%;
+	color: white;
+	font-size: 30px;
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	&:hover {
+		color: #1c1c1c;
+		background-color: rgba(255, 255, 255, 0.8);
+	}
+}
+.controlLeft {
+	left: 1rem;
+}
+.controlRight {
+	right: 1rem;
+}
+
+.carouselPostBox-bar {
+	width: 450px;
+	border-bottom: 1px solid #fff;
+	padding-bottom: 40px;
+	margin-bottom: 10px;
+	position: relative;
+	transition: 0.5s;
+	transition-delay: 0.1s;
+	&:after {
+		content: "";
+		display: block;
+		height: 8px;
+		width: 8px;
+		position: absolute;
+		bottom: -4px;
+		left: calc(50% - 40px);
+		background-color: white;
+		transform: rotate(45deg);
+	}
+	&.animateStop {
+		transition: 0s;
+	}
+}

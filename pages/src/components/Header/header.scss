@@ -1,0 +1,55 @@
+@charset "utf-8";
+@import '../../style/variable/deviceSize';
+@import '../../style/variable/layoutValue';
+
+
+// https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+.header {
+    display: inline-flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    align-items: center;
+    align-content: center;
+    position: fixed;
+    left:0;
+    top:0;
+    width: 100%;
+    height: $header-height;
+    background: $header-bg;
+    color: $header-color;
+    z-index:1;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    // header items
+    .item {
+      &:nth-child(1) {
+        padding-left: 0.5rem;
+      }
+      &:nth-last-child(1) {
+        padding-right: 0.5rem;
+      }
+      &.flex-1 {
+        flex: 1;
+      }
+    }
+    // header right-side
+    &-right-side {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    // logo
+    .logo {
+      width: 150px;
+      height: 50px;
+      background: url("https://fakeimg.pl/150x50?text=I'm logo&font=lobster" );
+    }
+    // user set up
+    .user-set-up {
+      display: none;
+      margin: 0 0.5rem;
+      cursor: pointer;
+      @include pc-width(){
+        display: inline-block;
+      }
+    }
+  }

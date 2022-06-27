@@ -1,0 +1,95 @@
+@charset "utf-8";
+@import "../../style/variable/deviceSize";
+@import "../../style/variable/layoutValue";
+@import '../../style/variable/color';
+// https://ishadeed.com/article/grid-layout-flexbox-components/
+
+
+.T-navigation {
+	display: none;
+	// pc-only
+	@include pc-width() {
+		display: inline-flex;
+		flex-flow: row wrap;
+		flex: 1;
+		align-items: center;
+		list-style: none;
+		&-wrap {
+			display: flex;
+			align-items: center;
+			list-style: none;
+			a {
+				text-decoration: none;
+				color: #ffffff;
+			}
+		}
+		&-item {
+			display: flex;
+			align-content: center;
+			padding: 0.5rem;
+			position: relative;
+			height: 30px;
+			list-style: none;
+			// 當T-navigation-item hover&active,子選單(T-navigation-sub)樣式
+			&:hover,
+			.active {
+				.T-navigation-label {
+					position: relative;
+					// border-bottom: 2px solid $header-bg;
+					&:after {
+						content: "";
+						width: 100%;
+						height: 2px;
+						background-color: #e9ca9d; //$warning-color;
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						transition: all 0.3s linear;
+					}
+				}
+				.T-navigation-sub {
+					display: flex;
+					flex-flow: column;
+					position: absolute;
+					top: 100%;
+				}
+			}
+		}
+		&-label {
+			position: relative;
+			cursor: pointer;
+			&:after {
+				content: "";
+				width: 0%;
+				height: 1px;
+				background-color: $warning-color;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				transition: all 0.3s linear;
+			}
+		}
+		// 子選單基本樣式
+		&-sub {
+			display: none;
+			margin: 0;
+			padding: 0;
+			z-index: 1;
+			min-width: 120px;
+			list-style: none;
+			// 子選單項目
+			&Item {
+				padding: 0.5rem 1rem;
+				background: #212121;
+				list-style: none;
+				cursor: pointer;
+				transition: background 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+				-webkit-transition: background 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+				&:hover,
+				.active {
+					background: $warning-color;
+				}
+			}
+		}
+	}
+}

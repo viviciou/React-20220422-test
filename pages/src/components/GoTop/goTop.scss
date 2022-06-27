@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+.goTop {
+  display: none;
+  position: fixed;
+  bottom: 0.25rem;
+  right: 0.25rem;
+  width: 50px;
+  height: 50px;
+  background: #ffc107;
+  color: #323330;
+  border-radius: 100%;
+  cursor:pointer;
+  -webkit-box-shadow: 0 2px 5px 0 rgb(0 0 0 / 26%);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 26%);
+  &.active {
+    display: block;
+  }
+}

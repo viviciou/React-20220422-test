@@ -1,0 +1,79 @@
+// Extra small devices
+// iphone 5 320*568 | iphone 7 375*667
+// 320px;375px;475px;
+$phoneSize: 568px;
+// 667px;720px;732px;736px
+$padSize: 768px;    //landscape/tablets
+$laptopSize-S: 992px;  //laptops/desktops
+$laptopSize-M: 1024px;
+$pcSize-S: 1200px;
+// 1280px
+$padSize-L: 1366px;
+$laptopsSize-L: 1440px;
+$pcSize-M: 1600px;
+$pcSize-L: 1920px;
+// 2650px
+
+//Media features
+
+// @mixin
+// 參考 https://ithelp.ithome.com.tw/articles/10194937
+// mobile
+@mixin phone-width() {  //568
+  @media screen and (min-width: $hponeSize){
+    @content;
+  }
+}
+@mixin pad-width() {  //768
+  @media screen and (min-width: $padSize) {
+    @content;
+  }
+}
+@mixin laptop-width() { //992
+  @media screen and (min-width: $laptopSize-S) {
+    @content;
+  }
+}
+@mixin pc-width() { //1024
+  @media screen and (min-width: $laptopSize-M) {
+    @content;
+  }
+}
+// orientation: 橫向/縱向顯示
+@mixin portrait(){
+  @media screen and (orientation: portrait ) {
+    @content;
+  }
+}
+@mixin landscape(){
+  @media screen and (orientation: landscape ) {
+    @content;
+  }
+}
+
+// aspect-ratio: width/height 視窗寬高比
+@mixin device-aspect-ratio4_3(){
+  @media screen and (device-aspect-ratio: 4/3) {
+    @content;
+  }
+}
+@mixin device-aspect-ratio16_9(){
+  @media screen and (device-aspect-ratio: 16/9) {
+    @content;
+  }
+}
+@mixin device-aspect-ratio32_18(){
+  @media screen and (device-aspect-ratio: 32/18) {
+    @content;
+  }
+}
+// @mixin device-aspect-ratio1280_720(){
+//   @media screen and (device-aspect-ratio: 1280/720) {
+//     @content;
+//   }
+// }
+// @mixin device-aspect-ratio2560_1440(){
+//   @media screen and (device-aspect-ratio: 2560/1440) {
+//     @content;
+//   }
+// }

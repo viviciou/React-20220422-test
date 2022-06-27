@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+@import './variable/deviceSize'; //各裝置設備尺寸
+@import './variable//color';// 主題顏色
+
+html,body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.App {
+  position: relative;
+  font-family: 'Microsoft JhengHei', monospace,sans-serif;
+  font-size: 1rem;
+  text-align: center;
+  letter-spacing: .4px;
+  color: $default-text-color;
+  // color: #ced5de;
+}
+// layout:header,content,footer
+// common:margin,padding,li,ol,....
+// col: width(col-1~12)
+@import 'layout.scss';
+@import 'common.scss';
+@import 'col.scss';
+@import 'button';
+@import 'input';
+@import 'checkbox';
+// @import 'radio';
+// @import 'sidebar'; //left
+// @import 'aside'; //right
+// @import 'tooltip';
+// @import 'page;
+// @import 'customer';
+// @import 'browser';
+// @import 'tooltip';
+// @import 'customer';
+// @import 'browser';
+@import 'override'; //覆蓋套件樣式(bootstrap,...)

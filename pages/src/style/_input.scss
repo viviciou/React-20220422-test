@@ -1,0 +1,14 @@
+@charset "utf-8";
+@import "./variable/color";
+
+input {
+	margin-left: 0.25rem;
+	border: 1px solid transparent;
+	border-bottom: 1px solid #ced5de;
+	outline: 1px solid transparent;
+	transition: all 0.4s ease;
+	-webkit-transition: all 0.4s ease;
+	&:focus-visible {
+		border-bottom: 1px solid $default-color;
+	}
+}

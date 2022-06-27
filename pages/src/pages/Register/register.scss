@@ -1,0 +1,17 @@
+.register {
+    display: inline-flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    color: #ffffff;
+    font-family: 'Microsoft JhengHei', monospace,sans-serif;
+    &-wrap {
+      text-align:center;
+    }
+    &-fieldText {
+      display: block;
+      margin: 0.25rem 0;
+    }
+}
+a { color: #f3f3f3};

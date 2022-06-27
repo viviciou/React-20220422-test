@@ -1,0 +1,25 @@
+@import './variable/layoutValue';
+
+
+
+
+main {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  margin-top: $header-height;
+  padding-bottom: $footerHeight*2; // footer hieght
+  width: 100%;
+  min-height: 100vh;
+	background: #333b50;
+  color: #d5bd9a;
+  // &.login {  //login 不顯示上方Header樣式
+  //   margin-top: 0;
+  //   height: 100vh;
+  // }
+  .wrap {
+    margin: auto;
+    max-width: $laptopSize-M; // 1024
+  }
+}
+

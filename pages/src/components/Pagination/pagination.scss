@@ -1,0 +1,33 @@
+@charset "utf-8";
+@import '../../style/variable/color';
+
+
+.pagination {
+	display: inline-flex;
+	flex-direction: row;
+
+	color: $default-color;
+	&-item {
+		padding: 0.5rem;
+        cursor: pointer;
+		&:hover {
+			color: $primary-color;
+		}
+		&.active {
+			color: #d5bd9a;//$danger-color;
+		}
+	}
+	&-button {
+        padding: 0.5rem;
+		color: $default-color;
+        cursor: pointer;
+		&:hover {
+			color: $primary-color;
+		}
+        &.disabled {
+            pointer-events: none;
+            color: $disabled-text-color;
+            cursor:default;
+        }
+	}
+}

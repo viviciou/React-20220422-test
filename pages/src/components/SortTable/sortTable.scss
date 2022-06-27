@@ -1,0 +1,93 @@
+@charset "utf-8";
+@import '../../style/variable/color';
+
+$table-border-style: none; //1px solid #888888;
+
+.sortTable {
+	&-wrap {
+		// 表格主體
+		table {
+			margin: auto;
+			margin-bottom: 0.5rem;
+			width: 100%;
+			border-collapse:collapse;
+			border: $table-border-style;
+			thead {
+				th {
+					position: relative;
+					cursor: pointer;
+					background: #d5bd9a;
+					color: #333b50;
+					border-left: $table-border-style;
+					// border-bottom: $table-border-style;
+					&.checkbox {
+						cursor: default;
+					}
+					&:hover {
+						opacity: 0.5;
+					}
+					&.hide {
+						display: none;
+					}
+					&:nth-child(1) {
+						border-left: 0px;
+					}
+				}
+			}
+			tbody {
+				td,
+				th {
+					border-left: $table-border-style;
+					border-top: $table-border-style;
+					&:nth-child(1) {
+						border-left: 0px;
+					}
+					&.hide {
+						display: none;
+					}
+				}
+			}
+		}
+		// 每頁顯示幾筆
+		.selectPerPage-position {
+			cursor: default;
+			display: inline-flex;
+			// text-align: left;
+			select {
+				cursor: pointer;
+			}
+		}
+		// 顯示欄位
+		.fieldShowBar {
+			display: inline-flex;
+			align-items: center;
+			align-content: center;
+			.item {
+				display: inline-flex;
+				padding: 0.5rem;
+				background: transparent;
+				color: #d5bd9a;//$info-color;
+				cursor: pointer;
+				&.active {
+					// background: $primary-color;
+					color: #2eaeeb;
+				}
+				&:hover {
+					color: #ffffff;
+					// background: $info-color;
+				}
+			}
+		}
+		// 關鍵字搜尋
+		.keywordSearchBar {
+			display: inline-flex;
+			flex-direction: row;
+			align-items: center;
+			align-content: center;
+			.searchBtn{
+				display: inline-flex;
+				cursor:pointer;
+			}
+		}
+	}
+}
